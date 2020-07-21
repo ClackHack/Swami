@@ -3,9 +3,13 @@
  Credits in terminal
 # Syntax
 the syntax in swami# is a little tricky
+
 to call a function the syntax is as follows
+
 functionName output_variable : arg1,arg2
+
 functionName : arg1, arg2
+
 functionName
 
 call if statements and loops using if bool and loop bool

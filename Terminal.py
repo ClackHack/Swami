@@ -6,16 +6,16 @@ while 1:
     command=input(">>> ")
     if command== "exit":
         break
-    if command=="credits":
+    elif command=="credits":
         print("Developed By Clay Hess 2020, inspired by Hayes Houseworth")
-    if begin(command,"file "):
+    elif begin(command,"file "):
         f=command.replace("file ","")
         try:
             open("Programs/"+f,"r").read()
         except:
             open("Programs/"+f,"w").write("")
         os.system("notepad.exe Programs/"+f)
-    if begin(command,"run "):
+    elif begin(command,"run "):
         f = command.replace("run ","")
         try:
             code=open("Programs/"+f,"r").read()

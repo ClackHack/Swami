@@ -85,6 +85,7 @@ functions['str']=pyFunction(lambda x:str(x[0]))
 functions['float']=pyFunction(lambda x:float(x[0]))
 functions['list']=pyFunction(lambda x:list(x[0]))
 functions['vars']=pyFunction(lambda:[print(p+" : "+str(q)) for p,q in variables.items()])
+functions['functions']=pyFunction(lambda:[print(p) for p in functions.keys()])
 functions['random'] = pyFunction(lambda x: random.randint(x[0],x[1]))
 functions['<='] = pyFunction(lambda x: x[0]<=x[1])
 functions['>='] = pyFunction(lambda x: x[0]>=x[1])
@@ -358,7 +359,9 @@ def compile(code):
 if __name__ == "__main__":
     
     code='''see "hello world!"
+functions
 zoinks 0
+
     '''
     o=compile(code)
     if o!=None:

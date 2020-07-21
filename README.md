@@ -9,5 +9,11 @@ functionName : arg1, arg2
 functionName
 
 call if statements and loops using if bool and loop bool
+
 NO semicolons, brackets {like these} are required
+
 every line will be a function call or a loop,function,if statement declaration
+
+call function or vars to see variables and builtin/written functions
+
+ALL variables are global

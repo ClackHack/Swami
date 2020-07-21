@@ -1,0 +1,19 @@
+like a=1
+like b=1
+like temp=a
+like count=0
+input roof : "How many Numbers? "
+int roof : roof
+subtract roof : roof,1
+see 1
+see endl
+< bool : count, roof
+loop bool
+add count : count, 1
+< bool : count,roof
+like temp = a
+add a: a,b
+like b = temp
+see a, endl
+zoinks
+zoinks 0

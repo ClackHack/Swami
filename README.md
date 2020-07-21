@@ -1,7 +1,7 @@
 # Swami
  A low level python base language based on Swami Shaggy
  Credits in terminal
-#Syntax
+# Syntax
 the syntax in swami# is a little tricky
 to call a function the syntax is as follows
 functionName output_variable : arg1,arg2

@@ -1,0 +1,5 @@
+random o : 0,1000000
+divide num : o, 1000000
+add pp : 2.5,num
+see pp,endl
+zoinks 0

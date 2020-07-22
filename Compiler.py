@@ -1,4 +1,5 @@
 import math,random,re
+from time import sleep
 global output
 global in_if
 comp=compile
@@ -104,6 +105,7 @@ functions["and"] = pyFunction(lambda x: not x[0] and x[1])
 functions["or"] = pyFunction(lambda x: not x[0] or x[1])
 functions["len"]=pyFunction(lambda x: len(x[0]))
 functions["append"]=pyFunction(lambda x: x[0].append(x[1]))
+functions["sleep"]=pyFunction(lambda x: sleep(x[0]))
 def compile(code):
   global in_if
   global activated

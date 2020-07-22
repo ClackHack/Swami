@@ -106,6 +106,8 @@ functions["or"] = pyFunction(lambda x: not x[0] or x[1])
 functions["len"]=pyFunction(lambda x: len(x[0]))
 functions["append"]=pyFunction(lambda x: x[0].append(x[1]))
 functions["sleep"]=pyFunction(lambda x: sleep(x[0]))
+functions["lower"]=pyFunction(lambda x: x[0].lower())
+functions["upper"]=pyFunction(lambda x: x[0].upper())
 def compile(code):
   global in_if
   global activated

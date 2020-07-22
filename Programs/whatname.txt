@@ -1,0 +1,16 @@
+input name : "Whats your name? "
+random r : 1,10
+<= bool : r,7
+not bool1 : bool
+== bool2 : name,"Clay"
+if bool2
+like bool= False
+like bool1=True
+jeepers
+if bool
+see "Your name sucks"
+jeepers
+if bool1
+see "What a good name"
+jeepers
+zoinks 0

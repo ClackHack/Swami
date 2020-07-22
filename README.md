@@ -14,6 +14,10 @@ functionName
 
 call if statements and loops using if bool and loop bool
 
+end if statements with jeepers
+
+end functions and loops with zoinks
+
 NO semicolons, brackets {like these} are required
 
 every line will be a function call or a loop,function,if statement declaration

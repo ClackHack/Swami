@@ -56,7 +56,7 @@ class pyFunction:
       if out:
         variables[out]=x
     except Exception as e:
-        #print(e)
+        print(e)
         return error('Undefined','Internal Function','Runtime','')
 class swamiFunction:
     def __init__(self,code):
@@ -102,7 +102,8 @@ functions["input"] = pyFunction(lambda x: input(str(x[0])))
 functions["not"] = pyFunction(lambda x: not x[0])
 functions["and"] = pyFunction(lambda x: not x[0] and x[1])
 functions["or"] = pyFunction(lambda x: not x[0] or x[1])
-
+functions["len"]=pyFunction(lambda x: len(x[0]))
+functions["append"]=pyFunction(lambda x: x[0].append(x[1]))
 def compile(code):
   global in_if
   global activated
@@ -120,20 +121,36 @@ def compile(code):
   l=[]
   depth=0
   global linenum
+  inif=False
   for i in lines:
+    #print("r")
     #linenum=i
     global _line
     if depth>0:
+        #print("Function")
         function+=i+"\n"
         if begin(i,"if"):
-            depth+=1
+            #print("inif")
+            inif=True
+            continue
+        if inif:
+            if begin(i,"jeepers"):
+                #print("outif")
+                inif=False
+                continue
+            continue
         elif begin(i,"loop"):
             depth+=1
         elif begin(i,"zoinks"):
+            #print(depth)
             depth-=1
+        
         if depth==0:
+            #print("Func Created")
             functions[name]=swamiFunction(function.strip('\n'))
+            #depth+=1
     elif begin(i,"def"):
+      #print("function started")
       name=i.replace("def ","")
       depth+=1
     else:
@@ -148,8 +165,10 @@ def compile(code):
     if looplines>0:
         looplines-=1
         continue
+    if begin(line,"#"):
+        continue
     if in_if and not activated:
-        if begin(line,"zoinks"):
+        if begin(line,"jeepers"):
             in_if=False
             activated=False
             continue
@@ -207,13 +226,16 @@ def compile(code):
         #print(value)
         variables[name]=value
         #print(value,variables)
-    elif begin(line,"zoinks"):
-        #print(line)
+    elif begin(line,"jeepers"):
         ran=True
         if in_if:
             
             in_if=False
             continue
+    elif begin(line,"zoinks"):
+        #print(line)
+        ran=True
+        
         l=line.replace("zoinks ","")
         try:
           v=re.split("|".join(("\+","-","/","\*",'not',"or","and")),l)
@@ -315,6 +337,7 @@ def compile(code):
                     ar.append(arg)
                   except:
                     return error(i+1,_line,"Runtime","What does this argument mean: "+p)
+          #print(ar)
           o=t.run(ar)
         elif len(a)==2:
           args=a[1].replace(', ',',').split(',')

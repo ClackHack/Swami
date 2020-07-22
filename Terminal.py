@@ -21,7 +21,7 @@ while 1:
             code=open("Programs/"+f,"r").read()
             c=compile(code)
             if type(c) == error:
-                print("",error,sep="\n")
+                print("",c,sep="\n")
             elif c==0:
                 print("\nExecuted with zero errors")
         except Exception as e:
@@ -37,7 +37,7 @@ while 1:
         try:
             c=compile(code)
             if type(c) == error:
-                print("\n",error,sep="")
+                print("\n",c,sep="")
             elif c==0:
                 print("\nExecuted with zero errors")
         except Exception as e:

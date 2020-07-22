@@ -1,0 +1,22 @@
+like data=1
+like aa=1
+def factorial
+index a:args,0
+int a : a
+#see a
+multiply aa : aa,a
+== bool : a,1
+if bool
+
+#see "Terminating"
+zoinks aa
+jeepers
+
+subtract a : a,1
+factorial : a
+zoinks aa
+input n:"Number; "
+int num : n
+factorial o :n
+see o,endl
+zoinks 0

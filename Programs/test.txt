@@ -3,7 +3,7 @@ def max
 index temp_1 : args, 0
 if temp
 index temp_1 : args,1
-zoinks
+jeepers
 zoinks temp_1
 input num1 : "Number 1; "
 input num2  :"Number 2; "

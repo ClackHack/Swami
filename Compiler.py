@@ -94,10 +94,15 @@ functions['>'] = pyFunction(lambda x: x[0]>x[1])
 functions['=='] = pyFunction(lambda x: x[0]==x[1])
 functions['!='] = pyFunction(lambda x: x[0]!=x[1])
 functions["add"] = pyFunction(lambda x: x[0]+x[1])
+functions["power"] = pyFunction(lambda x: x[0]**x[1])
 functions["subtract"] = pyFunction(lambda x: x[0]-x[1])
 functions["multiply"] = pyFunction(lambda x: x[0]*x[1])
 functions["divide"] = pyFunction(lambda x: x[0]/x[1])
 functions["input"] = pyFunction(lambda x: input(str(x[0])))
+functions["not"] = pyFunction(lambda x: not x[0])
+functions["and"] = pyFunction(lambda x: not x[0] and x[1])
+functions["or"] = pyFunction(lambda x: not x[0] or x[1])
+
 def compile(code):
   global in_if
   global activated
@@ -346,7 +351,8 @@ def compile(code):
           #print(ar)
           o=t.run(ar,out=a[0].strip())
           #print(ar)
-        if o:
+          #print(o)
+        if type(o)==error:
           o.addChild(error(i+1,_line,"Runtime","Invalid function call"))
           return o
     if not ran:
@@ -359,10 +365,8 @@ def compile(code):
 if __name__ == "__main__":
     
     code='''see "hello world!"
-functions
 zoinks 0
-
-    '''
+'''
     o=compile(code)
     if o!=None:
         print("\n",o,sep="")

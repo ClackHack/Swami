@@ -1,0 +1,12 @@
+def max
+< temp : args[0],args[1]
+index temp_1 : args, 0
+if temp
+index temp_1 : args,1
+zoinks
+zoinks temp_1
+input num1 : "Number 1; "
+input num2  :"Number 2; "
+max m : num1,num2 
+see m
+zoinks 0

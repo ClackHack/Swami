@@ -30,6 +30,8 @@ every line will be a function call or a loop,function,if statement declaration
 
 call function or vars to see variables and builtin/written functions
 
+function see is like print, the rest are pretty self explanatory, I have included examlple programs so you can see how it works
+
 ALL variables are global
 
 # Terminal

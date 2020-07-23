@@ -1,0 +1,9 @@
+input o : ""
+!= bool : o, "exit"
+loop bool
+random r : 1,6
+see r,endl
+input o : ""
+!= bool : o,"exit"
+zoinks
+zoinks 0

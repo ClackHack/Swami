@@ -1,6 +1,6 @@
 from Compiler import *
 import os
-print("Swami# 0.1, type credits for more info")
+print("Swami# 1.2, type credits for more info")
 
 while 1:
     command=input(">>> ")

@@ -1,0 +1,34 @@
+input o : ""
+!= bool : o, "exit"
+loop bool
+random r : 1,6
+see "-----",endl
+== bool1 : r,1
+if bool1
+see endl,"  #  ",endl,endl
+jeepers
+== bool1 : r,2
+if bool1
+see "#",endl,endl,"    #",endl
+jeepers
+== bool1 : r,3
+if bool1
+see "#",endl,"  #  ",endl,"    #",endl
+jeepers
+== bool1 : r,4
+if bool1
+see "#   #",endl,endl,"#   #",endl
+jeepers
+== bool1 : r,5
+if bool1
+see "#   #",endl,"  #",endl,"#   #",endl
+jeepers
+== bool1 : r,6
+if bool1
+see "# # #",endl,endl,"# # #",endl
+jeepers
+see "-----",endl
+input o : ""
+!= bool : o,"exit"
+zoinks
+zoinks 0

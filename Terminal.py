@@ -44,7 +44,10 @@ while 1:
                 print(f"\nExecuted with zero errors in {(x-y).total_seconds()} seconds")
         except Exception as e:
             print("Fatal error...",e)
-    
+    elif command=="programs":
+        f=os.listdir("Programs")
+        for p in f:
+            print(p)
     else:
-        print("Unkown command...\nCommands are file, run, swami ")
+        print("Unkown command...\nCommands are file, run, swami, programs, exit... ")
 print("Exiting...")

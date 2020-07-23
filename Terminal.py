@@ -1,6 +1,6 @@
 from Compiler import *
-import os
-print("Swami# 1.2, type credits for more info")
+import os,datetime
+print("Swami# 1.2.1, type credits for more info")
 
 while 1:
     command=input(">>> ")
@@ -19,11 +19,13 @@ while 1:
         f = command.replace("run ","")
         try:
             code=open("Programs/"+f,"r").read()
+            y=datetime.datetime.now()
             c=compile(code)
+            x=datetime.datetime.now()
             if type(c) == error:
                 print("",c,sep="\n")
             elif c==0:
-                print("\nExecuted with zero errors")
+                print(f"\nExecuted with zero errors in {(x-y).total_seconds()} seconds")
         except Exception as e:
             print("Could not find file, or fatal error...",e)
     elif command=="swami":
@@ -39,7 +41,7 @@ while 1:
             if type(c) == error:
                 print("\n",c,sep="")
             elif c==0:
-                print("\nExecuted with zero errors")
+                print(f"\nExecuted with zero errors in {(x-y).total_seconds()} seconds")
         except Exception as e:
             print("Fatal error...",e)
     

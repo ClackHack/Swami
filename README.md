@@ -12,6 +12,12 @@ functionName : arg1, arg2
 
 functionName
 
+define functions:
+
+def funcName
+
+end function with zoinks return_value
+
 call if statements and loops using if bool and loop bool
 
 end if statements with jeepers

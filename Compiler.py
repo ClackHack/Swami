@@ -108,6 +108,7 @@ functions["append"]=pyFunction(lambda x: x[0].append(x[1]))
 functions["sleep"]=pyFunction(lambda x: sleep(x[0]))
 functions["lower"]=pyFunction(lambda x: x[0].lower())
 functions["upper"]=pyFunction(lambda x: x[0].upper())
+functions["in"]=pyFunction(lambda x: x[0] in x[1])
 def compile(code):
   global in_if
   global activated

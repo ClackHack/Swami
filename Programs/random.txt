@@ -1,5 +1,5 @@
-input num1 : "Number 1; "
-input num2 : "Number 2; "
+input num1 : "Number 1: "
+input num2 : "Number 2: "
 int num1 : num1
 int num2 : num2
 random o : num1,num2

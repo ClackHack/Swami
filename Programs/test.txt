@@ -5,8 +5,8 @@ if temp
 index temp_1 : args,1
 jeepers
 zoinks temp_1
-input num1 : "Number 1; "
-input num2  :"Number 2; "
+input num1 : "Number 1: "
+input num2  :"Number 2: "
 max m : num1,num2 
 see m
 zoinks 0

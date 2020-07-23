@@ -1,5 +1,5 @@
-input num : "Number; "
-input roof : "Roof; "
+input num : "Number: "
+input roof : "Roof: "
 int num : num
 int roof : roof
 > bool : roof,num

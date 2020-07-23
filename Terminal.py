@@ -7,7 +7,7 @@ while 1:
     if command== "exit":
         break
     elif command=="credits":
-        print("Developed By Clay Hess 2020, inspired by Hayes Houseworth")
+        print("Developed By ClackHack, inspired by his friend (You know who you are)")
     elif begin(command,"file "):
         f=command.replace("file ","")
         try:

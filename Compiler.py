@@ -305,7 +305,7 @@ def compile(code):
         ran=True
         line=line.replace(j,'')
         
-        a=line.split(':')
+        a=line.split(':',maxsplit=1)
         o=None
         if a[0]=="":
             a=[]

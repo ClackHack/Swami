@@ -1,0 +1,11 @@
+input num : "Number; "
+input roof : "Roof; "
+int num : num
+int roof : roof
+> bool : roof,num
+loop bool
+power num : num,2
+see num,endl
+> bool : roof,num
+zoinks
+zoinks 0

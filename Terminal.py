@@ -49,7 +49,7 @@ while 1:
                 print(f"\nExecuted with zero errors in {(x-y).total_seconds()} seconds")
         except Exception as e:
             print("Fatal error...",e)
-             try:
+            try:
                 print(Compiler._line,Compiler.linenum)
             except:
                 pass

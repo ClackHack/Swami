@@ -1,0 +1,40 @@
+input option : "Press e to encrypt or d to decrypt: "
+input word : "Word: "
+== bool2 : option,"e"
+if bool2
+list alphabet : "abcdefghijklmnopqrstuvwxyz"
+list code : "qwertyuioplkjhgfdsazxcvbnm"
+
+like output = ""
+len length: word
+like count = 0
+!= bool1 : count, length
+loop bool1
+index letter: word,count
+find pos : alphabet, letter
+index o : code, pos
+add output:output,o
+add count: count,1
+!= bool1:count, length
+zoinks
+see output,endl
+jeepers
+== bool2 : option, "d"
+if bool2
+list alphabet : "qwertyuioplkjhgfdsazxcvbnm"
+list code : "abcdefghijklmnopqrstuvwxyz"
+like output = ""
+len length: word
+like count = 0
+!= bool1 : count, length
+loop bool1
+index letter: word,count
+find pos : alphabet, letter
+index o : code, pos
+add output:output,o
+add count: count,1
+!= bool1:count, length
+zoinks
+see output
+jeepers
+zoinks 0

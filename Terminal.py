@@ -1,4 +1,5 @@
 from Compiler import *
+import Compiler
 import os,datetime
 print("Swami# 1.2.1, type credits for more info")
 
@@ -28,6 +29,10 @@ while 1:
                 print(f"\nExecuted with zero errors in {(x-y).total_seconds()} seconds")
         except Exception as e:
             print("Could not find file, or fatal error...",e)
+            try:
+                print(Compiler._line,Compiler.linenum)
+            except:
+                pass
     elif command=="swami":
         code=""
         while 1:
@@ -44,6 +49,10 @@ while 1:
                 print(f"\nExecuted with zero errors in {(x-y).total_seconds()} seconds")
         except Exception as e:
             print("Fatal error...",e)
+             try:
+                print(Compiler._line,Compiler.linenum)
+            except:
+                pass
     elif command=="programs":
         f=os.listdir("Programs")
         for p in f:

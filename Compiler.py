@@ -85,8 +85,8 @@ functions['int']=pyFunction(lambda x:int(x[0]))
 functions['str']=pyFunction(lambda x:str(x[0]))
 functions['float']=pyFunction(lambda x:float(x[0]))
 functions['list']=pyFunction(lambda x:list(x[0]))
-functions['vars']=pyFunction(lambda:[print(p+" : "+str(q)) for p,q in variables.items()])
-functions['functions']=pyFunction(lambda:[print(p) for p in functions.keys()])
+functions['vars']=pyFunction(lambda x:[print(p+" : "+str(q)) for p,q in variables.items()])
+functions['functions']=pyFunction(lambda x:[print(p) for p in functions.keys()])
 functions['random'] = pyFunction(lambda x: random.randint(x[0],x[1]))
 functions['<='] = pyFunction(lambda x: x[0]<=x[1])
 functions['>='] = pyFunction(lambda x: x[0]>=x[1])
@@ -110,6 +110,7 @@ functions["sleep"]=pyFunction(lambda x: sleep(x[0]))
 functions["lower"]=pyFunction(lambda x: x[0].lower())
 functions["upper"]=pyFunction(lambda x: x[0].upper())
 functions["in"]=pyFunction(lambda x: x[0] in x[1])
+functions["find"]=pyFunction(lambda x: x[0].index(x[1]))
 def compile(code):
   global in_if
   global activated
@@ -305,7 +306,7 @@ def compile(code):
     for j,t in functions.items():
       if begin(line,j):
         ran=True
-        line=line.replace(j,'')
+        line=line.replace(j+" ",'')
         
         a=line.split(':',maxsplit=1)
         o=None

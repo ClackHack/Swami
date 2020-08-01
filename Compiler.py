@@ -2,6 +2,8 @@ import math,random,re
 from time import sleep
 global output
 global in_if
+global purgatory
+purgatory=[]
 comp=compile
 variables={"args":[]}
 functions={}
@@ -115,6 +117,8 @@ def compile(code):
   global in_if
   global activated
   global looplines
+  global purgatory
+  purgatory=[]
   looplines = 0
   in_if=False
   activated=False
@@ -385,6 +389,10 @@ def compile(code):
         if type(o)==error:
           o.addChild(error(i+1,_line,"Runtime","Invalid function call"))
           return o
+    if purgatory:
+        for p,q in purgatory:
+            functions[p]=q
+        purgatory=[]
     if not ran:
         return error(i+1,_line,"Syntax","I cant understand this line:")
         
@@ -392,9 +400,21 @@ def compile(code):
         
   if output:
     return output
+def anon(x):
+    global purgatory
+    temp=open("Programs/"+x[0],"r").read()
+    t=len(functions)
+    compile(temp)
+    #purgatory=functions.popitem()
+    t2=len(functions)
+    funcs = t2-t
+    #print(funcs)
+    for i in range(funcs):
+        purgatory.append(functions.popitem())
+functions["skedaddle"]=pyFunction(anon)
 if __name__ == "__main__":
     
-    code='''see "hello world!"
+    code='''see "Hello World"
 zoinks 0
 '''
     o=compile(code)

@@ -1,0 +1,6 @@
+skedaddle "test_func.txt"
+input n: "Number: "
+int n:n
+randFloat o:n
+see o
+zoinks 0

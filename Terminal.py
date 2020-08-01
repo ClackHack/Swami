@@ -1,7 +1,7 @@
 from Compiler import *
 import Compiler
 import os,datetime
-print("Swami# 1.2.1, type credits for more info")
+print("Swami# 1.3.1, type credits for more info")
 
 while 1:
     command=input(">>> ")

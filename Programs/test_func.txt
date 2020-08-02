@@ -3,6 +3,6 @@ index up : args,0
 int up:up
 multiply up:up,1000000
 random r:0,up
-divide ret : r,up
+divide ret : up,r
 zoinks ret
 zoinks 0

@@ -1,7 +1,7 @@
 from Compiler import *
 import Compiler
 import os,datetime
-print("Swami# 1.3.1, type credits for more info")
+print("Swami# 1.3.2, type credits for more info")
 
 while 1:
     command=input(">>> ")
@@ -30,7 +30,7 @@ while 1:
         except Exception as e:
             print("Could not find file, or fatal error...",e)
             try:
-                print(Compiler._line,Compiler.linenum)
+               print(Compiler._line,", Line: ",Compiler.linenum,sep="")
             except:
                 pass
     elif command=="swami":
@@ -42,7 +42,9 @@ while 1:
                 break
         code=code.strip()
         try:
+            y=datetime.datetime.now()
             c=compile(code)
+            x=datetime.datetime.now()
             if type(c) == error:
                 print("\n",c,sep="")
             elif c==0:
@@ -50,7 +52,7 @@ while 1:
         except Exception as e:
             print("Fatal error...",e)
             try:
-                print(Compiler._line,Compiler.linenum)
+                print(Compiler._line,", Line: ",Compiler.linenum,sep="")
             except:
                 pass
     elif command=="programs":

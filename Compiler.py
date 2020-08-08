@@ -65,8 +65,9 @@ class swamiFunction:
     def __init__(self,code):
         self.code=code
     def run(self,args,out=""):
-        if out=="count":
-                  print("here")
+        #if out=="count":
+                  #print("here")
+        #print(args)
         variables["args"]=args
         e=compile(self.code)
         #print("swami",e)

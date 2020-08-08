@@ -13,7 +13,7 @@ zoinks aa
 jeepers
 
 subtract a : a,1
-factorial : a
+factorial what : a
 zoinks aa
 input n:"Number: "
 int num : n

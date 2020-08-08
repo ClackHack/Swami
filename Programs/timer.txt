@@ -1,5 +1,0 @@
-input time : "How long do you want to sleep? "
-int time : time
-sleep : time
-see "Your timer has ended!!!"
-zoinks 0

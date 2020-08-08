@@ -1,9 +1,0 @@
-input min : "Number of minutes: "
-input sec : "Number of seconds: "
-int min : min
-int sec : sec
-multiply ms : min,60
-add time : sec, ms
-sleep time
-see "Your timer is up!!!"
-zoinks 0

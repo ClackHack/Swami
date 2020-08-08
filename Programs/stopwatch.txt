@@ -1,2 +1,0 @@
-input o:"press Enter to stop"
-zoinks 0

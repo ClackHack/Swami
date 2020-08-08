@@ -1,7 +1,7 @@
 from Compiler import *
 import Compiler
 import os,datetime
-print("Swami# 1.3.2, type credits for more info")
+print("Swami# 1.4.1, type credits for more info")
 
 while 1:
     command=input(">>> ")
@@ -59,6 +59,10 @@ while 1:
         f=os.listdir("Programs")
         for p in f:
             print(p)
+    elif begin(command,"delete"):
+        f = command.replace("delete ","").strip()
+        os.remove("Programs/"+f)
+    
     else:
-        print("Unkown command...\nCommands are file, run, swami, programs, exit... ")
+        print("Unkown command...\nCommands are file, run, swami, programs, delete, and exit... ")
 print("Exiting...")

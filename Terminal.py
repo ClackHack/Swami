@@ -61,7 +61,10 @@ while 1:
             print(p)
     elif begin(command,"delete"):
         f = command.replace("delete ","").strip()
-        os.remove("Programs/"+f)
+        try:
+            os.remove("Programs/"+f)
+        except:
+            print("The file you specified was not found...")
     
     else:
         print("Unkown command...\nCommands are file, run, swami, programs, delete, and exit... ")

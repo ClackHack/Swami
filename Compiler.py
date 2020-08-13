@@ -154,12 +154,13 @@ def compile(code):
         elif begin(i,"loop"):
             depth+=1
         elif begin(i,"zoinks"):
-            #print(depth)
+            
             depth-=1
-        
+            #print(depth)
         if depth==0:
             #print("Func Created")
             functions[name]=swamiFunction(function.strip('\n'))
+            function=""
             #depth+=1
     elif begin(i,"def"):
       #print("function started")
@@ -310,6 +311,7 @@ def compile(code):
         looplines=count    
     for j,t in functions.items():
       if begin(line,j):
+        #print(j)
         ran=True
         line=line.replace(j+" ",'')
         
@@ -384,6 +386,7 @@ def compile(code):
                   except:
                     return error(i+1,_line,"Runtime","What does this argument mean: "+p)
           #print(ar)
+          
           o=t.run(ar,out=a[0].strip())
           #print(ar)
           #print(o)
@@ -409,13 +412,14 @@ def anon(x):
     #purgatory=functions.popitem()
     t2=len(functions)
     funcs = t2-t
+    #print(functions)
     #print(funcs)
     for i in range(funcs):
         purgatory.append(functions.popitem())
 functions["skedaddle"]=pyFunction(anon)
 if __name__ == "__main__":
     
-    code='''see "Hello World"
+    code='''see "Hello World!"
 zoinks 0
 '''
     o=compile(code)

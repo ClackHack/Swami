@@ -1,7 +1,16 @@
-input num1 : "Number 1: "
-input num2 : "Number 2: "
-int num1 : num1
-int num2 : num2
-random o : num1,num2
-see o,endl
+def randFloat
+index up : args,0
+#see "activated"
+int up:up
+multiply up:up,1000000
+random r:0,up
+divide ret : up,r
+zoinks ret
+def choice
+index temp : args, 0
+len temp1 : temp
+subtract temp1 : temp1, -1
+random temp2 : 0, temp1
+index r : temp, temp2
+zoinks r
 zoinks 0

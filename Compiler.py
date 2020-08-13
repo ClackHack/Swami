@@ -259,9 +259,10 @@ def compile(code):
               l=l.replace(q.strip(),str(variables[q.strip()]))
               #print(l)
             except Exception as e:
-              #print(e)
+              #print(e,"error")
               try:
                 eval(q)
+                
                 #print(eval(q))
               except:
                 return error(i+1,_line,"Syntax","like zoinks scoob, your return doesnt make sense")
@@ -270,10 +271,12 @@ def compile(code):
           
         finally:
             try:
-                #print(l,eval(l))
                 return eval(l)
-            except:
-                return error(i+1,_line,"Syntax","like zoinks scoob, your return doesnt make sense")
+            except Exception as e:
+                try:
+                    return l
+                except:
+                    return error(i+1,_line,"Syntax","like zoinks scoob, your return doesnt make sense")
 
         
     elif begin(line,"if"):
@@ -306,8 +309,10 @@ def compile(code):
         text=text.strip('\n')
         #print(text)
         while variables[l.strip()]:
-            compile(text)
-            
+            o=compile(text)
+            if type(o)==error:
+              o.addChild(error(i+1,_line,"Runtime","Invalid function call"))
+              return o
         looplines=count    
     for j,t in functions.items():
       if begin(line,j):
@@ -321,7 +326,9 @@ def compile(code):
             a=[]
         if len(a)==0:
           o=t.run([])
-         
+          if type(o)==error:
+              o.addChild(error(i+1,_line,"Runtime","Invalid function call"))
+              return o
         elif len(a)==1:
           args=a[0].replace(', ',',').split(',')
           ar=[]
@@ -353,6 +360,9 @@ def compile(code):
                     return error(i+1,_line,"Runtime","What does this argument mean: "+p)
           #print(ar)
           o=t.run(ar)
+          if type(o)==error:
+              o.addChild(error(i+1,_line,"Runtime","Invalid function call"))
+              return o
         elif len(a)==2:
           args=a[1].replace(', ',',').split(',')
           ar=[]

@@ -9,8 +9,9 @@ zoinks ret
 def choice
 index temp : args, 0
 len temp1 : temp
-subtract temp1 : temp1, -1
+subtract temp1 : temp1, 1
 random temp2 : 0, temp1
 index r : temp, temp2
+#see r
 zoinks r
 zoinks 0

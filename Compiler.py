@@ -300,7 +300,8 @@ def compile(code):
             
             if begin(q,"if"):
                 depth+=1
-                
+            elif begin(q,"jeepers"):
+                depth-=1
             elif begin(q,"zoinks"):
                 depth-=1
             if depth==0:

@@ -1,0 +1,36 @@
+def max
+< temp : args[0],args[1]
+index temp_1 : args, 0
+if temp
+index temp_1 : args,1
+jeepers
+zoinks temp_1
+def min
+> temp : args[0],args[1]
+index temp_1 : args, 0
+if temp
+index temp_1 : args,1
+jeepers
+zoinks temp_1
+def xor
+index temp1 : args, 0
+index temp2 : args, 1
+or tempbool : temp1, temp2
+and tempbool2 : temp1, temp2
+not tempbool2 : tempbool2
+and tempr : tempbool, tempbool2
+zoinks tempr
+def sum
+index temp : args, 0
+len temp1 : temp
+like tempcount = 0
+< tempbool : tempcount, temp1
+like tempreturn = 0
+loop tempbool
+index temp2 : temp, tempcount
+add tempreturn : tempreturn, temp2
+add tempcount : tempcount, 1
+< tempbool : tempcount, temp1
+zoinks
+zoinks tempreturn
+zoinks 0

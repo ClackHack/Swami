@@ -352,7 +352,7 @@ def compile(code):
                   arg=eval(p)
                   #print(arg)
                 except Exception as e:
-                    print(e)
+                    #print(e)
                     return error(i+1,_line,"Runtime","What does this argument mean: "+p)
               finally:
                   try:

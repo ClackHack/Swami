@@ -1,7 +1,7 @@
 from Compiler import *
 import Compiler
 import os,datetime
-print("Swami# 1.4.1, type credits for more info")
+print("Swami# 1.5.1, type credits for more info")
 
 while 1:
     command=input(">>> ")
@@ -65,7 +65,71 @@ while 1:
             os.remove("Programs/"+f)
         except:
             print("The file you specified was not found...")
-    
+    elif command == "repl":
+        print("Swami# REPL, type exit to exit REPL")
+        while 1:
+            code=input(". ")
+            if code == "exit":
+                break
+            if begin(code, "if"):
+                depth=1
+                
+                while 1:
+                    c1 = input(".. ")
+                    if c1 == "jeepers":
+                        depth-=1
+                    elif c1=="zoinks":
+                        depth-=1
+                    elif begin(c1,"loop"):
+                        depth+=1
+                    elif begin(c1,"if"):
+                        depth+=1
+                    code+="\n"+c1
+                    if depth==0:
+                        break
+            elif begin(code, "loop"):
+                depth=1
+                while 1:
+                    c1 = input(".. ")
+                    if c1 == "jeepers":
+                        depth-=1
+                    elif c1=="zoinks":
+                        depth-=1
+                    elif begin(c1,"loop"):
+                        depth+=1
+                    elif begin(c1,"if"):
+                        depth+=1
+                    code+="\n"+c1
+                    if depth==0:
+                        break
+            if begin(code, "def"):
+                depth=1
+                while 1:
+                    c1 = input(".. ")
+                    if c1 == "jeepers":
+                        depth-=1
+                    elif begin(c1,"zoinks"):
+                        depth-=1
+                    elif begin(c1,"loop"):
+                        depth+=1
+                    elif begin(c1,"if"):
+                        depth+=1
+                    code+="\n"+c1
+                    if depth==0:
+                        break
+            code+="\nzoinks 0"
+            try:
+                c=compile(code)
+                if type(c) == error:
+                    print("\n",c,sep="")
+            except Exception as e:
+                print("Fatal error...",e)
+                try:
+                    print(Compiler._line,", Line: ",Compiler.linenum,sep="")
+                except:
+                    pass
+    elif command=="help":
+        print("Commands are file, run, swami, programs, delete, and exit\nCheck the github page for syntax support")
     else:
-        print("Unkown command...\nCommands are file, run, swami, programs, delete, and exit... ")
+        print("Unkown command...\ntype help for help... ")
 print("Exiting...")

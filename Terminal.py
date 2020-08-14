@@ -129,7 +129,7 @@ while 1:
                 except:
                     pass
     elif command=="help":
-        print("Commands are file, run, swami, programs, delete, and exit\nCheck the github page for syntax support")
+        print("Commands are file, run, swami, programs, delete, repl, and exit\nCheck the github page for syntax support")
     else:
         print("Unkown command...\ntype help for help... ")
 print("Exiting...")

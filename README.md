@@ -24,7 +24,7 @@ end if statements with jeepers
 
 end functions and loops with zoinks
 
-NO semicolons, brackets {like these} are required
+NO semicolons in print statements (unless you have an output variable for the print statement which works for somereason)
 
 every line will be a function call or a loop,function,if statement declaration
 

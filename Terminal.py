@@ -1,8 +1,11 @@
 from Compiler import *
 import Compiler
 import os,datetime
-print("Swami# 1.5.1, type credits for more info")
-
+import _thread
+print("Swami# 1.6.1, type credits for more info")
+def notepad(f):
+    os.system("notepad.exe Programs/"+f)
+    return
 while 1:
     command=input(">>> ")
     if command== "exit":
@@ -15,7 +18,8 @@ while 1:
             open("Programs/"+f,"r").read()
         except:
             open("Programs/"+f,"w").write("")
-        os.system("notepad.exe Programs/"+f)
+        _thread.start_new_thread(notepad,(f,))
+        #os.system("notepad.exe Programs/"+f)
     elif begin(command,"run "):
         f = command.replace("run ","")
         try:

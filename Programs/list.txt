@@ -1,0 +1,38 @@
+def join
+index l : args, 0
+index split : args, 1
+len num : l
+> bool : num, 1
+like temp = 0
+like out=""
+loop bool
+index temp1: l, temp
+add out:out,temp1
+add out:out,split
+add temp:temp,1
+subtract num:num,1
+> bool:num,1
+zoinks
+len num:l
+subtract num:num,1
+index temp1:l,num
+add out:out,temp1
+zoinks out
+
+def enumerate
+index l: args,0
+like r=[]
+len num:l
+like count=0
+< bool : count,num
+loop bool
+like templ=[]
+append templ,count
+index tempi:l,count
+append templ,tempi
+append r,templ
+add count:count,1
+< bool : count, num
+zoinks
+zoinks r
+zoinks 0
